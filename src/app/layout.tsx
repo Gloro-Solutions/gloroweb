@@ -40,6 +40,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased light">
+      <head>
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display" />
+      </head>
       <body className="min-h-full flex flex-col bg-[#f8fafc] text-slate-900">{children}</body>
     </html>
   );
