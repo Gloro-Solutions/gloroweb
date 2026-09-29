@@ -1,17 +1,32 @@
 import type { Metadata } from "next";
+import { Inter, Kanit } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const kanit = Kanit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-kanit",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://glorosolutions.com"),
-  title: "Gloro Solutions — Under Development",
-  description: "Engineering Next-Generation Digital Systems, Cloud Architecture, and Intelligent Automation. Our full platform is under active development.",
+  title: "Gloro Solutions — Modern Digital Engineering & Creative Technology",
+  description:
+    "Gloro Solutions is a modern digital engineering and creative technology startup engineering high-performance web systems, cloud architectures, and autonomous AI pipelines.",
   icons: {
     icon: "/brand/Logo.png",
     apple: "/brand/Logo.png",
   },
   openGraph: {
-    title: "Gloro Solutions — Under Development",
-    description: "Engineering the Next Era of Intelligent Digital Platforms.",
+    title: "Gloro Solutions — Digital Engineering Studio",
+    description: "Engineering Next-Generation Digital Systems, Cloud Architecture, and Intelligent Automation.",
     url: "https://glorosolutions.com",
     siteName: "Gloro Solutions",
     images: [
@@ -27,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gloro Solutions — Under Development",
-    description: "Engineering the Next Era of Intelligent Digital Platforms.",
+    title: "Gloro Solutions — Digital Engineering Studio",
+    description: "Engineering Next-Generation Digital Systems, Cloud Architecture, and Intelligent Automation.",
     images: ["/brand/Twitter header - 1.png"],
   },
 };
@@ -39,12 +54,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased light">
-      <head>
-        <link rel="preconnect" href="https://fonts.cdnfonts.com" />
-        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display" />
-      </head>
-      <body className="min-h-full flex flex-col bg-[#f8fafc] text-slate-900">{children}</body>
+    <html lang="en" className={`h-full antialiased light ${inter.variable} ${kanit.variable}`}>
+      <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white">
+        {children}
+      </body>
     </html>
   );
 }
